@@ -1,0 +1,14 @@
+{
+  "name": "@kydr/prettier",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "index.json",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "^3.7.2",
+    "prettier-plugin-tailwindcss": "^0.2.7"
+  }
+}

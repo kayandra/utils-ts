@@ -2,8 +2,10 @@
 
 Extracting most used typescript utils into simple packages.
 
-
 ## Features
-- [ ] Env
-- [ ] Tailwind
-- [ ] Zod
+
+- [ ] classnames
+- [ ] Eslint
+- [ ] Prettier
+- [ ] tsconfig
+- [ ] Zod/env

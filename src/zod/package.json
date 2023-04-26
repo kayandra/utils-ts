@@ -1,0 +1,21 @@
+{
+  "name": "@kydr/zod",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "types": "index.ts",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "camelcase-keys": "^8.0.2",
+    "type-fest": "^3.9.0"
+  },
+  "devDependencies": {
+    "zod": "^3.21.4"
+  },
+  "peerDependencies": {
+    "zod": "^3.21.4"
+  }
+}

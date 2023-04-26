@@ -1,0 +1,23 @@
+{
+  "name": "@kydr/utils.ts",
+  "packageManager": "pnpm@7.15.0",
+  "prettier": "@kydr/prettier",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "devDependencies": {
+    "@kydr/prettier": "workspace:*",
+    "eslint": "^7.32.0",
+    "eslint-config-kydr": "workspace:*",
+    "prettier": "^2.5.1",
+    "turbo": "latest",
+    "vitest": "^0.30.1"
+  }
+}

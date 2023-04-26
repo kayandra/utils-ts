@@ -1,0 +1,13 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Zod > converts object keys to camelCase 1`] = `
+{
+  "camelSnakeCase": "camelSnakeCase",
+  "kebabCase": "kebabCase",
+  "pascalCase": "pascalCase",
+  "pascalSnakeCase": "pascalSnakeCase",
+  "screamingKebabCase": "screamingKebabCase",
+  "screamingSnakeCase": "screamingSnakeCase",
+  "snakeCase": "snakeCase",
+}
+`;
