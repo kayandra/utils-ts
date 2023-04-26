@@ -1,3 +1,3 @@
-import { defineWorkspace } from "vitest/config";
+import { defineWorkspace } from 'vitest/config'
 
-export default defineWorkspace(["src/**"]);
+export default defineWorkspace(['src/**'])

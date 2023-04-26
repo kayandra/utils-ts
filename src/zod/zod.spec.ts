@@ -1,7 +1,7 @@
-import { describe, expect, it } from 'vitest';
-import { z } from 'zod';
+import { describe, expect, it } from 'vitest'
+import { z } from 'zod'
 
-import { propertiesToCamelCase } from '.';
+import { propertiesToCamelCase } from '.'
 
 describe('Zod', () => {
   it('converts object keys to camelCase', () => {
@@ -13,9 +13,9 @@ describe('Zod', () => {
       Pascal_Snake_Case: z.string().default('pascalSnakeCase'),
       SCREAMING_SNAKE_CASE: z.string().default('screamingSnakeCase'),
       PascalCase: z.string().default('pascalCase'),
-    });
+    })
 
-    const parsed = propertiesToCamelCase(schema).parse({});
-    expect(parsed).toMatchSnapshot();
-  });
-});
+    const parsed = propertiesToCamelCase(schema).parse({})
+    expect(parsed).toMatchSnapshot()
+  })
+})

@@ -1,38 +1,44 @@
-import { describe, expect, it } from 'vitest';
-import { z } from 'zod';
+import { describe, expect, it } from 'vitest'
+import { z } from 'zod'
 
-import { createValidatedEnv } from '.';
+import { createValidatedEnv } from '.'
 
 describe('ENV', () => {
   it('validates proper envs', () => {
-    const successEnv = createValidatedEnv(testvars(), sharedRawSchema());
+    const successEnv = createValidatedEnv(testvars(), sharedRawSchema())
 
-    expect(successEnv.NODE_ENV).equal('test');
-    expect(successEnv.NEXT_PUBLIC_VAR).equal('demo');
-    expect(successEnv.NUMBER).equal(69);
-    expect(successEnv.BOOLEAN).toBeTruthy();
-    expect(successEnv).to.not.have.key('NONEXISTENT');
-  });
+    expect(successEnv.NODE_ENV).equal('test')
+    expect(successEnv.NEXT_PUBLIC_VAR).equal('demo')
+    expect(successEnv.NUMBER).equal(69)
+    expect(successEnv.BOOLEAN).toBeTruthy()
+    expect(successEnv).to.not.have.key('NONEXISTENT')
+  })
+
+  it('can skip validation', () => {
+    expect(() => {
+      createValidatedEnv({}, sharedRawSchema(), { skipValidation: true })
+    }).not.to.throw()
+  })
 
   it('errors on improper envs', () => {
-    expect(() =>
-      createValidatedEnv({}, sharedRawSchema()),
-    ).toThrowErrorMatchingInlineSnapshot('"Invalid environment variables"');
-  });
+    expect(() => {
+      createValidatedEnv({}, sharedRawSchema())
+    }).toThrowErrorMatchingInlineSnapshot('"Invalid environment variables"')
+  })
 
-  it('errors getting server var on client', () => {
+  it('errors getting server env on client', () => {
     expect(() => {
       const getter = createValidatedEnv(testvars(), sharedRawSchema(), {
         isServer: false,
-      });
+      })
 
       // this show throw the error
-      getter.NODE_ENV;
+      getter.NODE_ENV
     }).toThrowErrorMatchingInlineSnapshot(
       '"❌ Attempted to access server-side environment variable \'NODE_ENV\' on the client"',
-    );
-  });
-});
+    )
+  })
+})
 
 function sharedRawSchema() {
   return {
@@ -40,7 +46,7 @@ function sharedRawSchema() {
     NUMBER: z.number(),
     BOOLEAN: z.boolean(),
     NEXT_PUBLIC_VAR: z.string(),
-  };
+  }
 }
 
 function testvars() {
@@ -50,5 +56,5 @@ function testvars() {
     BOOLEAN: true,
     NEXT_PUBLIC_VAR: 'demo',
     NONEXISTENT: 'NONEXISTENT',
-  };
+  }
 }
