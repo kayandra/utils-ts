@@ -12,7 +12,8 @@
     "coverage": "vitest run --coverage",
     "prepare": "husky install"
   },
-  "devDependencies": {
+  "dependencies": {
+    "@changesets/cli": "^2.26.1",
     "@kydr/prettier": "workspace:*",
     "eslint": "^7.32.0",
     "eslint-config-kydr": "workspace:*",
