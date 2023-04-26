@@ -6,16 +6,20 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "lint": "prettier --write \"**/*.{ts,tsx,md}\"",
     "test": "vitest run",
     "test:watch": "vitest",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@kydr/prettier": "workspace:*",
     "eslint": "^7.32.0",
     "eslint-config-kydr": "workspace:*",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.1",
+    "micromatch": "^4.0.5",
+    "pnpm": "^8.3.1",
     "prettier": "^2.5.1",
     "turbo": "latest",
     "typescript": "^5.0.4",

@@ -1,11 +1,11 @@
-import { cva as globalCva } from 'class-variance-authority';
-import clsx, { type ClassValue } from 'clsx';
-import { twMerge } from 'tailwind-merge';
+import { cva as globalCva } from 'class-variance-authority'
+import clsx, { type ClassValue } from 'clsx'
+import { twMerge } from 'tailwind-merge'
 
-export { type VariantProps as CvaProps } from 'class-variance-authority';
+export { type VariantProps as CvaProps } from 'class-variance-authority'
 
 export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(...inputs));
+  return twMerge(clsx(...inputs))
 }
 
 type CvaParams<T> = Parameters<typeof globalCva<T>>
